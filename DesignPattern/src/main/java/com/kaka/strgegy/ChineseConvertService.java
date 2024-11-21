@@ -1,4 +1,4 @@
-package com.kaka.javaAdvancedDemo.design.strgegy;
+package com.kaka.strgegy;
 
 import org.springframework.stereotype.Service;
 
