@@ -23,6 +23,7 @@
     </developers>
     <modules>
         <module>DesignPattern</module>
+        <module>JavaBase</module>
     </modules>
     <scm>
         <connection/>
