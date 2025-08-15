@@ -1,5 +1,6 @@
 package com.kaka.proxy;
 
+import java.io.IOException;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
@@ -71,7 +72,7 @@ public class MyInvocationHandler implements InvocationHandler {
         return Proxy.newProxyInstance(Thread.currentThread().getContextClassLoader(), target.getClass().getInterfaces(), this);
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         UserService service = new UserServiceImpl();
         MyInvocationHandler handler = new MyInvocationHandler(service);
         UserService proxy = (UserService) handler.getProxy();

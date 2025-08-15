@@ -5,6 +5,7 @@ import org.springframework.cglib.proxy.Enhancer;
 import org.springframework.cglib.proxy.MethodInterceptor;
 import org.springframework.cglib.proxy.MethodProxy;
 
+import java.io.IOException;
 import java.lang.reflect.Method;
 
 public class CglibProxy implements MethodInterceptor {
@@ -32,7 +33,7 @@ public class CglibProxy implements MethodInterceptor {
 }
 
 class DoCGLib {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         CglibProxy proxy = new CglibProxy();
         //通过生成子类的方式创建代理类
         UserServiceImpl proxyImp = (UserServiceImpl) proxy.getProxy(UserServiceImpl.class);
